@@ -11,10 +11,6 @@ import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoMap;
 
-/**
- * Created by Ankit Garg on 10/29/17.
- */
-
 @Module
 public abstract class ViewModelModule {
     @Binds

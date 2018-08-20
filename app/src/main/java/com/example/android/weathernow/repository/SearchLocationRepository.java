@@ -25,13 +25,9 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-/**
- * Created by Ankit Garg on 10/28/17.
- */
-
 @Singleton
 public class SearchLocationRepository {
-    private WeatherApi weatherApi;
+    private final WeatherApi weatherApi;
     private final AppExecutors appExecutors;
     private final LocationDao locationDao;
     private final WeatherDao weatherDao;

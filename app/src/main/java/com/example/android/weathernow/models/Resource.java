@@ -1,9 +1,5 @@
 package com.example.android.weathernow.models;
 
-/**
- * Created by Ankit Garg on 10/29/17.
- */
-
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 

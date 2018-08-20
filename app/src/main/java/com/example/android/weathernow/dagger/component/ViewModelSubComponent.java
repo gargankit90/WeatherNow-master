@@ -1,9 +1,5 @@
 package com.example.android.weathernow.dagger.component;
 
-/**
- * Created by Ankit Garg on 10/29/17.
- */
-
 import com.example.android.weathernow.view.search.SharedSearchDetailViewModel;
 
 import dagger.Subcomponent;

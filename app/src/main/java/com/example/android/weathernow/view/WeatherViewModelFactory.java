@@ -1,9 +1,5 @@
 package com.example.android.weathernow.view;
 
-/**
- * Created by Ankit Garg on 10/29/17.
- */
-
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 

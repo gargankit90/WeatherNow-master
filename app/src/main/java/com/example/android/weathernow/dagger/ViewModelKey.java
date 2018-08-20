@@ -10,10 +10,6 @@ import java.lang.annotation.Target;
 
 import dagger.MapKey;
 
-/**
- * Created by Ankit Garg on 10/29/17.
- */
-
 @Documented
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)

@@ -3,7 +3,6 @@ package com.example.android.weathernow.view.search;
 import android.Manifest;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
@@ -51,23 +50,22 @@ import javax.inject.Inject;
 
 public class SearchLocationFragment extends Fragment implements Injectable {
     private static final String TAG = "SearchLocationFragment";
-    private static String[] PERMISSIONS_LOCATION = {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION};
+    private static final String[] PERMISSIONS_LOCATION = {Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION};
     private static final int REQUEST_LOCATION = 1002;
-    FragmentSearchLocationBinding binding;
-    RecyclerView rvWeatherList;
-    List<ConsolidatedWeather> weatherList;
-    WeatherListAdapter adapter;
+    private FragmentSearchLocationBinding binding;
+    private RecyclerView rvWeatherList;
+    private List<ConsolidatedWeather> weatherList;
+    private WeatherListAdapter adapter;
     private DrawerLayout mDrawer;
-    private NavigationView nvDrawer;
-    Menu menuNav;
-    AppCompatImageButton searchButton;
-    ImageView hamburgerIcon;
-    PlaceDetectionClient placeDetectionClient;
+    private Menu menuNav;
+    private AppCompatImageButton searchButton;
+    private ImageView hamburgerIcon;
+    private PlaceDetectionClient placeDetectionClient;
     @Inject
     ViewModelProvider.Factory viewModelFactory;
     private SharedSearchDetailViewModel sharedSearchDetailViewModel;
-    TextView locSearch;
-    ProgressBar progressBar;
+    private TextView locSearch;
+    private ProgressBar progressBar;
 
     public SearchLocationFragment() {
         // Required empty public constructor
@@ -106,16 +104,10 @@ public class SearchLocationFragment extends Fragment implements Injectable {
         locSearch = getView().findViewById(R.id.place_autocomplete_search_input);
         hamburgerIcon = binding.menu;
         progressBar = binding.progressBar;
-        nvDrawer = binding.nvView;
+        NavigationView nvDrawer = binding.nvView;
         setupDrawerContent(nvDrawer);
         menuNav = nvDrawer.getMenu();
-        hamburgerIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mDrawer.openDrawer(GravityCompat.START);
-            }
-        });
+        hamburgerIcon.setOnClickListener(v -> mDrawer.openDrawer(GravityCompat.START));
 
         getLocation();
 
@@ -322,16 +314,5 @@ public class SearchLocationFragment extends Fragment implements Injectable {
         } else {
             Snackbar.make(rvWeatherList, R.string.device_offline, Snackbar.LENGTH_LONG).show();
         }
-    }
-
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
     }
 }

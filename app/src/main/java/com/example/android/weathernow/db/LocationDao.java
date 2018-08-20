@@ -1,7 +1,6 @@
 package com.example.android.weathernow.db;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -10,10 +9,6 @@ import android.arch.persistence.room.Query;
 import com.example.android.weathernow.models.Location;
 
 import java.util.List;
-
-/**
- * Created by Ankit Garg on 10/28/17.
- */
 
 @Dao
 public interface LocationDao {

@@ -5,9 +5,6 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-/**
- * Created by Ankit Garg on 10/26/17.
- */
 public class Response {
     @SerializedName("consolidated_weather")
     @Expose

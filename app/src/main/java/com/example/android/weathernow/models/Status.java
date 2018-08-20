@@ -1,10 +1,6 @@
 package com.example.android.weathernow.models;
 
 /**
- * Created by Ankit Garg on 10/29/17.
- */
-
-/**
  * Status of a resource that is provided to the UI.
  * <p>
  * These are usually created by the Repository classes where they return

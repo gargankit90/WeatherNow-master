@@ -2,8 +2,6 @@ package com.example.android.weathernow.models;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.ForeignKey;
-import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
@@ -13,9 +11,6 @@ import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
 
-/**
- * Created by Ankit Garg on 10/26/17.
- */
 @Entity(tableName = "weather")
 @Parcel
 public class ConsolidatedWeather {

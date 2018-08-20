@@ -16,10 +16,6 @@ import java.util.Objects;
 
 import javax.inject.Inject;
 
-/**
- * Created by Ankit Garg on 10/28/17.
- */
-
 public class SharedSearchDetailViewModel extends ViewModel {
     private MutableLiveData<String> place = new MutableLiveData<>();
     private LiveData<Resource<Location>> locationList = new MutableLiveData<>();

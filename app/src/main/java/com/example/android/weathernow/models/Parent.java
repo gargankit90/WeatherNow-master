@@ -3,10 +3,6 @@ package com.example.android.weathernow.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by Ankit Garg on 10/26/17.
- */
-
 public class Parent {
     @SerializedName("title")
     @Expose

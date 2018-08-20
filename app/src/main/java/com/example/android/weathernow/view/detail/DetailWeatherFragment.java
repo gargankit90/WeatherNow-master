@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,7 +27,6 @@ import org.parceler.Parcels;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import javax.inject.Inject;
@@ -35,14 +35,14 @@ import javax.inject.Inject;
  * A simple {@link Fragment} subclass.
  */
 public class DetailWeatherFragment extends Fragment implements Injectable {
-    FragmentDetailWeatherBinding binding;
-    android.support.v7.widget.Toolbar toolbar;
-    TextView weatherStateName, temperature, maxTemp, minTemp, windSpeed, windDirection, today, date;
-    ImageView weatherStateIcon;
+    private FragmentDetailWeatherBinding binding;
+    private Toolbar toolbar;
+    private TextView weatherStateName, temperature, maxTemp, minTemp, windSpeed, windDirection, today, date;
+    private ImageView weatherStateIcon;
     private static final String WEATHER = "weather";
     private static final String LOCATION_TITLE = "location_title";
-    ConsolidatedWeather weather;
-    String locationTitle;
+    private ConsolidatedWeather weather;
+    private String locationTitle;
     @Inject
     ViewModelProvider.Factory viewModelFactory;
     private SharedSearchDetailViewModel sharedSearchDetailViewModel;

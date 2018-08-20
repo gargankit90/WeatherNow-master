@@ -19,14 +19,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Ankit Garg on 10/27/17.
- */
-
 public class WeatherListAdapter extends RecyclerView.Adapter {
-    List<ConsolidatedWeather> weatherList;
+    final List<ConsolidatedWeather> weatherList;
     Context context;
-    DetailHelper listener;
+    final DetailHelper listener;
     String locationTitle;
 
 
@@ -47,8 +43,7 @@ public class WeatherListAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.weather_item, parent, false);
-        WeatherViewHolder weatherViewHolder = new WeatherViewHolder(view);
-        return weatherViewHolder;
+        return new WeatherViewHolder(view);
     }
 
     @Override
@@ -79,12 +74,7 @@ public class WeatherListAdapter extends RecyclerView.Adapter {
             e.printStackTrace();
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onWeatherClickHandler(weather, locationTitle);
-            }
-        });
+        holder.itemView.setOnClickListener(v -> listener.onWeatherClickHandler(weather, locationTitle));
     }
 
     @Override
@@ -93,8 +83,8 @@ public class WeatherListAdapter extends RecyclerView.Adapter {
     }
 
     public class WeatherViewHolder extends RecyclerView.ViewHolder {
-        TextView weatherStateName, temperature, humidity, today, date;
-        ImageView weatherStateIcon;
+        final TextView weatherStateName, temperature, humidity, today, date;
+        final ImageView weatherStateIcon;
 
         public WeatherViewHolder(View itemView) {
             super(itemView);
@@ -108,6 +98,6 @@ public class WeatherListAdapter extends RecyclerView.Adapter {
     }
 
     public interface DetailHelper {
-        public void onWeatherClickHandler(ConsolidatedWeather weather, String locationTitle);
+        void onWeatherClickHandler(ConsolidatedWeather weather, String locationTitle);
     }
 }

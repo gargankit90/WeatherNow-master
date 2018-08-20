@@ -15,7 +15,7 @@
     <dimen name="navigation_header_fontsize">20sp</dimen>
     <dimen name="navigation_header_height">192dp</dimen>
     <dimen name="detail_fragement_temp_fontsize">32sp</dimen>
-    <dimen name="detail_fragement_attributes_fontsize">16sp</dimen>
+    <dimen name="detail_fragment_attributes_fontsize">16sp</dimen>
     <dimen name="detail_fragment_weather_state_name_fontsize">18sp</dimen>
     <dimen name="detail_fragment_weather_state_temp_leftmargin">16dp</dimen>
     <dimen name="detail_fragment_icon_rightmargin">16dp</dimen>

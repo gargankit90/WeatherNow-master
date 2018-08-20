@@ -7,9 +7,6 @@ import android.arch.persistence.room.PrimaryKey;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by Ankit Garg on 10/27/17.
- */
 @Entity
 public class Location {
     @SerializedName("title")

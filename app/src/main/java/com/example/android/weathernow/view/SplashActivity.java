@@ -8,10 +8,6 @@ import com.viksaa.sssplash.lib.activity.AwesomeSplash;
 import com.viksaa.sssplash.lib.cnst.Flags;
 import com.viksaa.sssplash.lib.model.ConfigSplash;
 
-/**
- * Created by Ankit Garg on 10/30/17.
- */
-
 public class SplashActivity extends AwesomeSplash {
 
     @Override

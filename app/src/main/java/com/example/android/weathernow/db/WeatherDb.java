@@ -1,9 +1,5 @@
 package com.example.android.weathernow.db;
 
-/**
- * Created by Ankit Garg on 10/28/17.
- */
-
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;
 

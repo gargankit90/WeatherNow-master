@@ -10,10 +10,6 @@ import com.example.android.weathernow.models.ConsolidatedWeather;
 
 import java.util.List;
 
-/**
- * Created by Ankit Garg on 10/28/17.
- */
-
 @Dao
 public interface WeatherDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)

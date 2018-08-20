@@ -1,9 +1,5 @@
 package com.example.android.weathernow;
 
-/**
- * Created by Ankit Garg on 10/29/17.
- */
-
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;

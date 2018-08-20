@@ -6,10 +6,6 @@ import com.example.android.weathernow.view.search.SearchLocationFragment;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
-/**
- * Created by Ankit Garg on 10/28/17.
- */
-
 @Module
 public abstract class FragmentBuildersModule {
     @ContributesAndroidInjector
