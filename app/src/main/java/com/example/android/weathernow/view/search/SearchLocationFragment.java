@@ -60,7 +60,7 @@ public class SearchLocationFragment extends Fragment implements Injectable {
     private Menu menuNav;
     private AppCompatImageButton searchButton;
     private ImageView hamburgerIcon;
-    private PlaceDetectionClient placeDetectionClient;
+    PlaceDetectionClient placeDetectionClient;
     @Inject
     ViewModelProvider.Factory viewModelFactory;
     private SharedSearchDetailViewModel sharedSearchDetailViewModel;
@@ -69,14 +69,6 @@ public class SearchLocationFragment extends Fragment implements Injectable {
 
     public SearchLocationFragment() {
         // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
-        if (getArguments() != null) {
-        }
     }
 
     @Override
@@ -108,11 +100,8 @@ public class SearchLocationFragment extends Fragment implements Injectable {
         setupDrawerContent(nvDrawer);
         menuNav = nvDrawer.getMenu();
         hamburgerIcon.setOnClickListener(v -> mDrawer.openDrawer(GravityCompat.START));
-
         getLocation();
-
         mDrawer = getView().findViewById(R.id.drawer_layout);
-
 
         SupportPlaceAutocompleteFragment autocompleteFragment = (SupportPlaceAutocompleteFragment)
                 getChildFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
@@ -143,7 +132,6 @@ public class SearchLocationFragment extends Fragment implements Injectable {
             }
         });
 
-
         sharedSearchDetailViewModel.getLocationList().observe(this, result -> {
             Log.d(TAG, "Observer" + result);
             if(result.status == com.example.android.weathernow.models.Status.SUCCESS
@@ -170,8 +158,6 @@ public class SearchLocationFragment extends Fragment implements Injectable {
                 progressBar.setVisibility(View.GONE);
             }
         });
-
-
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -242,22 +228,18 @@ public class SearchLocationFragment extends Fragment implements Injectable {
     }
 
     public void getLocation() {
-        Log.i(TAG, "Show contacts button pressed. Checking permissions.");
+        Log.i(TAG, "Checking permissions.");
 
-        // Verify that all required contact permissions have been granted.
-        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.READ_CONTACTS)
+        // Verify that all required permissions have been granted.
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-            // Contacts permissions have not been granted.
-            Log.i(TAG, "Contact permissions has NOT been granted. Requesting permissions.");
+            // Location permissions have not been granted.
+            Log.i(TAG, "Location permissions has NOT been granted. Requesting permissions.");
             requestLocationPermissions();
-
         } else {
-
-            // Contact permissions have been granted. Show the contacts fragment.
-            Log.i(TAG, "Contact permissions have already been granted. Displaying contact details.");
+            // Location permissions have been granted
+            Log.i(TAG, "Location permissions have already been granted");
             //TODO get current location and make a network call or fetch data from db
-
-
         }
     }
 
@@ -286,7 +268,7 @@ public class SearchLocationFragment extends Fragment implements Injectable {
             Log.i(TAG, "Received response for Location permissions request.");
 
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                // All required permissions have been granted, display contacts fragment.
+                // All required permissions have been granted.
                 Snackbar.make(rvWeatherList, R.string.permision_available_location,
                         Snackbar.LENGTH_SHORT)
                         .show();
@@ -308,7 +290,6 @@ public class SearchLocationFragment extends Fragment implements Injectable {
         if (query.length() == 0) {
             Snackbar.make(rvWeatherList, R.string.empty_search, Toast.LENGTH_LONG).show();
         }
-
         if (Utilities.isNetworkAvailable(getContext()) && Utilities.isOnline()) {
             sharedSearchDetailViewModel.setPlace(query);
         } else {

@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
 
 import com.example.android.weathernow.dagger.ViewModelKey;
-import com.example.android.weathernow.view.WeatherViewModelFactory;
+import com.example.android.weathernow.dagger.WeatherViewModelFactory;
 import com.example.android.weathernow.view.search.SharedSearchDetailViewModel;
 
 import dagger.Binds;

@@ -1,4 +1,4 @@
-package com.example.android.weathernow.view;
+package com.example.android.weathernow.dagger;
 
 import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProvider;
