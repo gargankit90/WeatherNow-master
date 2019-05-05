@@ -1,8 +1,4 @@
 # Android
-- task: SonarQubePrepare@4
-  inputs:
-    SonarQube: 'MS Azure SonarQube'
-    scannerMode: 'Other'
 # Build your Android project with Gradle.
 # Add steps that test, sign, and distribute the APK, save build artifacts, and more:
 # https://docs.microsoft.com/vsts/pipelines/languages/android
@@ -11,6 +7,11 @@ pool:
   vmImage: 'macOS 10.13'
 
 steps:
+- task: SonarQubePrepare@4
+  inputs:
+    SonarQube: 'MS Azure SonarQube'
+    scannerMode: 'Other'
+
 - task: Gradle@2
   inputs:
     workingDirectory: ''
